@@ -1,0 +1,8 @@
+0.1 (2015-04-15)
+================
+
+- Convert from using git submodule used in
+  https://github.com/Pylons/pylons_sphinx_theme to a package. See
+  https://github.com/Pylons/pyramid/issues/1614
+
+- Initial commit.

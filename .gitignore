@@ -1,0 +1,14 @@
+*.egg
+*.egg-info
+*.pyc
+*.pt.py
+*.txt.py
+.coverage
+.DS_Store
+.idea
+_build/
+dist/
+env26
+env24
+env27
+build/
