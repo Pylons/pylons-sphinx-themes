@@ -14,14 +14,14 @@ Edit your project's ``setup.py``
 1. Add ``pylons-sphinx-themes`` to your project's requirements in its
 ``setup.py``. Here's an example from Pyramid.
 
-```python
-docs_extras = [
-   'Sphinx >= 1.2.3',
-   'docutils',
-   'repoze.sphinx.autointerface',
-   'pylons-sphinx-themes >= 0.3',
-   ]
-```
+    ```python
+    docs_extras = [
+       'Sphinx >= 1.2.3',
+       'docutils',
+       'repoze.sphinx.autointerface',
+       'pylons-sphinx-themes >= 0.3',
+       ]
+    ```
 
 Edit your Sphinx documentation's ``conf.py``
 --------------------------------------------
