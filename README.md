@@ -13,41 +13,48 @@ Edit your project's ``setup.py``
 1. Add ``pylons-sphinx-themes`` to your project's requirements in its
    ``setup.py``. Here's an example from Pyramid.
 
-.. code-block:: python
-   :emphasize-lines: 5
-
-   docs_extras = [
-       'Sphinx >= 1.2.3',
-       'docutils',
-       'repoze.sphinx.autointerface',
-       'pylons-sphinx-themes >= 0.3',
-       ]
+```python
+docs_extras = [
+   'Sphinx >= 1.2.3',
+   'docutils',
+   'repoze.sphinx.autointerface',
+   'pylons-sphinx-themes >= 0.3',
+   ]
+```
 
 Edit your Sphinx documentation's ``conf.py``
 --------------------------------------------
 1. Near the top, add the following.::
 
-    import pylons_sphinx_themes
+```python
+import pylons_sphinx_themes
+```
 
 2. Activate the theme::
 
-    html_theme = 'pyramid'
-    html_theme_path = pylons_sphinx_themes.get_html_themes_path()
+```python
+html_theme = 'pyramid'
+html_theme_path = pylons_sphinx_themes.get_html_themes_path()
+```
 
 3. If you were previously using the git submodule method to use the Pylons
    theme, then comment or delete the block of code under the following
    statement::
 
-    # Add and use Pylons theme
-    if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
-    ...
+```python
+# Add and use Pylons theme
+if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
+...
+```
 
 4. (Optional) Set a canonical root URL::
 
-    html_theme_options = dict(
-        canonical_url='http://the_root_domain/latest/docs/'
-    )
-   
+```python
+html_theme_options = dict(
+    canonical_url='http://the_root_domain/latest/docs/'
+)
+```
+
 The URL points to the root of the documentation, and requires a trailing
 slash.
 
