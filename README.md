@@ -23,8 +23,8 @@ Edit your project's ``setup.py``
        ]
     ```
 
-Edit your Sphinx documentation's ``conf.py``
---------------------------------------------
+Edit your Sphinx's ``conf.py``
+------------------------------
 1. Near the top, add the following.
 
     ```python
@@ -56,10 +56,59 @@ statement.
     )
     ```
 
-The URL points to the root of the documentation, and requires a trailing
-slash.
+   The URL points to the root of the documentation, and requires a trailing
+   slash.
 
-The following themes exist.
+Undo git submodule method
+-------------------------
+If you were previously using the git submodule method to use the Pylons theme,
+then perform the following additional steps.
+
+1. Remove ``.gitmodules``.
+
+    ```bash
+    cd <your_project_directory>
+    git rm .gitmodules
+    ```
+2. Deinitialize the submodule.
+
+    ```bash
+    cd docs/_themes
+    git submodule deinit .
+    ```
+
+3. Remove the submodule's directory.
+
+    ```bash
+    cd ..
+    git rm _themes/
+    ```
+
+4. Edit your Sphinx's ``Makefile``. The following is an
+   [example diff](https://github.com/Pylons/pyramid/pull/1636/files)
+   from Pyramid.
+
+    ```
+    -html: themes
+    +html:
+    ...
+    -htmlhelp: themes
+    +htmlhelp:
+    ...
+    -themes:
+    -	cd ..; git submodule update --init --recursive; cd docs;
+    ```
+
+Update Read the Docs configuration
+----------------------------------
+Add this package to your ``rtd.txt``.
+
+```
+pylons-sphinx-themes
+```
+
+Available themes
+----------------
 
 - **pylons** - the generic Pylons Project documentation theme
 - **pyramid** - the specific Pyramid documentation theme
