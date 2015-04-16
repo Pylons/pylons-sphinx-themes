@@ -8,6 +8,21 @@ package implementation instead of git submodules and manual steps.
 
 To use a theme in your Sphinx documentation, follow this guide.
 
+Edit your project's ``setup.py``
+--------------------------------
+1. Add ``pylons-sphinx-themes`` to your project's requirements in its
+   ``setup.py``. Here's an example from Pyramid.
+
+.. code-block:: python
+   :emphasize-lines: 5
+
+   docs_extras = [
+       'Sphinx >= 1.2.3',
+       'docutils',
+       'repoze.sphinx.autointerface',
+       'pylons-sphinx-themes >= 0.3',
+       ]
+
 Edit your Sphinx documentation's ``conf.py``
 --------------------------------------------
 1. Near the top, add the following.::

@@ -17,7 +17,7 @@ from sys import version
 
 from setuptools import setup, find_packages
 
-VERSION = '0.1'
+VERSION = '0.3'
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:
@@ -26,11 +26,7 @@ try:
 except IOError:
     README = CHANGES = ''
 
-requires = [
-    'Sphinx',
-    'docutils'
-    ]
-
+requires = []
 
 setup(name='pylons-sphinx-themes',
       version=VERSION,
