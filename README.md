@@ -27,34 +27,34 @@ Edit your Sphinx documentation's ``conf.py``
 --------------------------------------------
 1. Near the top, add the following.
 
-```python
-import pylons_sphinx_themes
-```
+    ```python
+    import pylons_sphinx_themes
+    ```
 
 2. Activate the theme.
 
-```python
-html_theme = 'pyramid'
-html_theme_path = pylons_sphinx_themes.get_html_themes_path()
-```
+    ```python
+    html_theme = 'pyramid'
+    html_theme_path = pylons_sphinx_themes.get_html_themes_path()
+    ```
 
 3. If you were previously using the git submodule method to use the Pylons
 theme, then comment or delete the block of code under the following
 statement.
 
-```python
-# Add and use Pylons theme
-if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
-...
-```
+    ```python
+    # Add and use Pylons theme
+    if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
+    ...
+    ```
 
 4. (Optional) Set a canonical root URL.
 
-```python
-html_theme_options = dict(
-    canonical_url='http://the_root_domain/latest/docs/'
-)
-```
+    ```python
+    html_theme_options = dict(
+        canonical_url='http://the_root_domain/latest/docs/'
+    )
+    ```
 
 The URL points to the root of the documentation, and requires a trailing
 slash.
