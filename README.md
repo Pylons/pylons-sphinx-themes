@@ -70,6 +70,7 @@ then perform the following additional steps.
     cd <your_project_directory>
     git rm .gitmodules
     ```
+
 2. Deinitialize the submodule.
 
     ```bash
