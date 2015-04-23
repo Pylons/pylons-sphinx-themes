@@ -100,9 +100,23 @@ then perform the following additional steps.
     -	cd ..; git submodule update --init --recursive; cd docs;
     ```
 
+Update ``tox.ini``
+------------------
+If you use tox and specify dependencies for building your docs, add this
+package to your ``rtd.txt``. The following example is from
+[waitress](https://github.com/Pylons/waitress/blob/master/tox.ini#L28).
+
+```ini
+deps =
+    Sphinx
+    repoze.sphinx.autointerface
+    pylons-sphinx-themes
+```
+
 Update Read the Docs configuration
 ----------------------------------
-Add this package to your ``rtd.txt``.
+If you specify package requirements for Read the Docs, add this package to
+your ``rtd.txt``.
 
 ```
 pylons-sphinx-themes
