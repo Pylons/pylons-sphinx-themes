@@ -103,7 +103,7 @@ then perform the following additional steps.
 Update ``tox.ini``
 ------------------
 If you use tox and specify dependencies for building your docs, add this
-package to your ``rtd.txt``. The following example is from
+package to your ``tox.ini``. The following example is from
 [waitress](https://github.com/Pylons/waitress/blob/master/tox.ini#L28).
 
 ```ini
