@@ -16,10 +16,10 @@ Edit your project's ``setup.py``
 
     ```python
     docs_extras = [
-       'Sphinx >= 1.2.3',
+       'Sphinx >= 1.3.1', # Read The Docs minimum version
        'docutils',
        'repoze.sphinx.autointerface',
-       'pylons-sphinx-themes >= 0.3',
+       'pylons-sphinx-themes',
        ]
     ```
 
@@ -97,7 +97,7 @@ then perform the following additional steps.
     +htmlhelp:
     ...
     -themes:
-    -	cd ..; git submodule update --init --recursive; cd docs;
+    -    cd ..; git submodule update --init --recursive; cd docs;
     ```
 
 Update ``tox.ini``
@@ -115,11 +115,19 @@ deps =
 
 Update Read the Docs configuration
 ----------------------------------
-If you specify package requirements for Read the Docs, add this package to
-your ``rtd.txt``.
+If you specify package requirements for Read the Docs, specify dependencies
+in your ``rtd.txt``. You can either name them explicitly, which might be
+duplicitous:
 
 ```
 pylons-sphinx-themes
+```
+
+or you can rely on your ``setup.py`` configuration, specifying dependencies in
+only one place, by simply using this in your ``rtd.txt``.
+
+```
+-e .[docs]
 ```
 
 Available themes
