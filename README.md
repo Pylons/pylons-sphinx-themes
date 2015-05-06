@@ -102,8 +102,29 @@ then perform the following additional steps.
 
 Update ``tox.ini``
 ------------------
-If you use tox and specify dependencies for building your docs, add this
-package to your ``tox.ini``. The following example is from
+If you use tox, you can specify dependencies for building your docs either in
+your ``setup.py`` (preferred) or in your ``tox.ini`` (duplicitous). See the
+[example from Pyramid](https://github.com/Pylons/pyramid/blob/master/setup.py#L58-L64).
+
+```ini
+docs_extras = [
+    'Sphinx >= 1.3.1',
+    'docutils',
+    'repoze.sphinx.autointerface',
+    'pylons_sphinx_latesturl',
+    'pylons-sphinx-themes',
+    ]
+
+...
+
+      extras_require = {
+          'testing':testing_extras,
+          'docs':docs_extras,
+          },
+```
+
+Otherwise you can repeat yourself and edit your ``tox.ini``. The following
+example is from
 [waitress](https://github.com/Pylons/waitress/blob/master/tox.ini#L28).
 
 ```ini
