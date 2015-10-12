@@ -19,7 +19,7 @@ Edit your project's ``setup.py``
        'Sphinx >= 1.3.1', # Read The Docs minimum version
        'docutils',
        'repoze.sphinx.autointerface',
-       'pylons-sphinx-themes',
+       'pylons_sphinx_themes',
        ]
     ```
 
