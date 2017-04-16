@@ -1,6 +1,9 @@
 Releasing
 =========
 
+`zest.releaser <http://zestreleaser.readthedocs.io/en/latest/>`_ is used for releasing this package.
+
+
 
 
 Updating README
