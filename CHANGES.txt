@@ -1,7 +1,7 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0 (unreleased)
+1.0 (2017-04-16)
 ----------------
 
 - Use zest.releaser for releasing.
