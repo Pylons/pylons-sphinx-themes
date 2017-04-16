@@ -1,0 +1,16 @@
+Releasing
+=========
+
+
+
+Updating README
+---------------
+
+README.rst is the canonical README file in reStructuredText format for use on PyPI. Edit this file to update both READMEs.
+
+README.md is the markdown version. It is generated through the use of pandoc using the following command.
+
+.. code-block:: bash
+
+    pandoc --from=rst --to=markdown --output=README.md README.rst
+
