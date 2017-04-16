@@ -13,7 +13,6 @@
 ##############################################################################
 
 import os
-from sys import version
 
 from setuptools import setup, find_packages
 
@@ -30,22 +29,31 @@ requires = []
 
 setup(name='pylons-sphinx-themes',
       version=VERSION,
-      description=('Pylons Sphinx themes for documentation styling.'),
+      description='Sphinx themes for Pylons Project documentation.',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
-      "Environment :: Web Environment",
-        "Intended Audience :: Developers",
-        "Intended Audience :: System Administrators",
-        "Programming Language :: Python",
-        "License :: Repoze Public License",
-        "Topic :: Internet",
-        "Topic :: Software Development :: Documentation",
-        ],
-      keywords='pylons web pyramid sphinx documentation',
-      author="Steve Piercy",
-      author_email="pylons-discuss@googlegroups.com",
-      url="http://pylonsproject.org",
-      license="BSD-derived (http://www.repoze.org/LICENSE.txt)",
+          'Development Status :: 5 - Production/Stable',
+          'Environment :: Web Environment',
+          'Framework :: Sphinx :: Theme',
+          'Intended Audience :: Developers',
+          'Intended Audience :: System Administrators',
+          'License :: Repoze Public License',
+          'Programming Language :: Python',
+          'Programming Language :: Python :: 2',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
+          'Programming Language :: Python :: 3.6',
+          'Topic :: Documentation',
+          'Topic :: Documentation :: Sphinx',
+          'Topic :: Software Development :: Documentation',
+      ],
+      keywords='pyramid pylons web sphinx documentation',
+      author='Steve Piercy',
+      author_email='pylons-discuss@googlegroups.com',
+      url='http://pylonsproject.org',
+      license='BSD-derived (http://www.repoze.org/LICENSE.txt)',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
