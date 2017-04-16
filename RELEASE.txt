@@ -3,7 +3,11 @@ Releasing
 
 `zest.releaser <http://zestreleaser.readthedocs.io/en/latest/>`_ is used for releasing this package.
 
+To release, invoke the following command from your virtual environment.
 
+.. code-block:: bash
+
+    fullrelease
 
 
 Updating README
