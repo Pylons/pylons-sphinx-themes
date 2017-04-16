@@ -5,88 +5,90 @@ This repository is a Python package that contains Sphinx themes for Pylons relat
 
 To use a theme in your Sphinx documentation, follow this guide.
 
+
 Edit your project's ``setup.py``
 --------------------------------
-1. Add ``pylons-sphinx-themes`` to your project's requirements in its ``setup.py``. Here's an example from Pyramid.
+#. Add ``pylons-sphinx-themes`` to your project's requirements in its ``setup.py``. Here's an example from Pyramid.
 
-.. code-block:: python
+   .. code-block:: python
 
-    docs_extras = [
-       'Sphinx >= 1.3.1', # Read The Docs minimum version
-       'docutils',
-       'repoze.sphinx.autointerface',
-       'pylons-sphinx-themes',
-       ]
+       docs_extras = [
+           'Sphinx >= 1.3.1', # Read The Docs minimum version
+           'docutils',
+           'repoze.sphinx.autointerface',
+           'pylons-sphinx-themes',
+           ]
+
 
 Edit your Sphinx's ``conf.py``
 ------------------------------
-1. Near the top, add the following.
+#. Near the top, add the following.
 
-    .. code-block:: python
+   .. code-block:: python
 
-        import pylons_sphinx_themes
+       import pylons_sphinx_themes
 
-2. Activate the theme.
+#. Activate the theme.
 
-    .. code-block:: python
+   .. code-block:: python
 
-        html_theme = 'pyramid'
-        html_theme_path = pylons_sphinx_themes.get_html_themes_path()
+       html_theme = 'pyramid'
+       html_theme_path = pylons_sphinx_themes.get_html_themes_path()
 
-3. If you were previously using the git submodule method to use the Pylons theme, then comment or delete the block of code under the following statement.
+#. If you were previously using the git submodule method to use the Pylons theme, then comment or delete the block of code under the following statement.
 
-    .. code-block:: python
+   .. code-block:: python
 
-        # Add and use Pylons theme
-        if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
+       # Add and use Pylons theme
+       if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
 
-4. (Optional) Set a canonical root URL.
+#. (Optional) Set a canonical root URL. The URL points to the root of the documentation, and requires a trailing slash.
 
-    .. code-block:: python
+   .. code-block:: python
 
-        html_theme_options = dict(
-            canonical_url='http://the_root_domain/latest/docs/'
-        )
+       html_theme_options = dict(
+           canonical_url='http://the_root_domain/latest/docs/'
+       )
 
-   The URL points to the root of the documentation, and requires a trailing slash.
 
 Undo git submodule method
 -------------------------
 If you were previously using the git submodule method to use the Pylons theme, then perform the following additional steps.
 
-1. Remove ``.gitmodules``.
+#. Remove ``.gitmodules``.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        cd <your_project_directory>
-        git rm .gitmodules
+       cd <your_project_directory>
+       git rm .gitmodules
 
-2. Deinitialize the submodule.
+#. Deinitialize the submodule.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        cd docs/_themes
-        git submodule deinit .
+       cd docs/_themes
+       git submodule deinit .
 
-3. Remove the submodule's directory.
+#. Remove the submodule's directory.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        cd ..
-        git rm _themes/
+       cd ..
+       git rm _themes/
 
-4. Edit your Sphinx's ``Makefile``. The following is an `example diff <https://github.com/Pylons/pyramid/pull/1636/files>`_ from Pyramid.
+#. Edit your Sphinx's ``Makefile``. The following is an `example diff <https://github.com/Pylons/pyramid/pull/1636/files>`_ from Pyramid.
 
-    .. code-block:: diff
+   .. code-block:: diff
 
-        -html: themes
-        +html:
-        # ...
-        -htmlhelp: themes
-        +htmlhelp:
-        #...
-        -themes:
-        -    cd ..; git submodule update --init --recursive; cd docs;
+       -html: themes
+       +html:
+       # ...
+       -htmlhelp: themes
+       +htmlhelp:
+       #...
+       -themes:
+       -    cd ..; git submodule update --init --recursive; cd docs;
+
 
 Update ``tox.ini``
 ------------------
@@ -117,6 +119,7 @@ Otherwise you can repeat yourself and edit your ``tox.ini``. The following examp
         Sphinx
         repoze.sphinx.autointerface
         pylons-sphinx-themes
+
 
 Update Read the Docs configuration
 ----------------------------------
