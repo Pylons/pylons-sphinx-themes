@@ -1,112 +1,116 @@
 Pylons Sphinx Themes
 ====================
 
-This repository is a Python package that contains Sphinx themes for Pylons
-related projects. This project is based on
-[Pylons Sphinx Theme](https://github.com/Pylons/pylons_sphinx_theme)
-(singular), but uses a package implementation instead of git submodules and
-manual steps.
+This repository is a Python package that contains Sphinx themes for
+Pylons related projects. This project is based on [Pylons Sphinx
+Theme](https://github.com/Pylons/pylons_sphinx_theme) (singular), but
+uses a package implementation instead of git submodules and manual
+steps.
 
 To use a theme in your Sphinx documentation, follow this guide.
 
-Edit your project's ``setup.py``
---------------------------------
-1. Add ``pylons-sphinx-themes`` to your project's requirements in its
-``setup.py``. Here's an example from Pyramid.
-
-    ```python
-    docs_extras = [
-       'Sphinx >= 1.3.1', # Read The Docs minimum version
-       'docutils',
-       'repoze.sphinx.autointerface',
-       'pylons-sphinx-themes',
-       ]
-    ```
-
-Edit your Sphinx's ``conf.py``
+Edit your project's `setup.py`
 ------------------------------
-1. Near the top, add the following.
 
-    ```python
-    import pylons_sphinx_themes
-    ```
+1.  Add `pylons-sphinx-themes` to your project's requirements in its
+    `setup.py`. Here's an example from Pyramid.
 
-2. Activate the theme.
+``` {.sourceCode .python}
+docs_extras = [
+   'Sphinx >= 1.3.1', # Read The Docs minimum version
+   'docutils',
+   'repoze.sphinx.autointerface',
+   'pylons-sphinx-themes',
+   ]
+```
 
-    ```python
-    html_theme = 'pyramid'
-    html_theme_path = pylons_sphinx_themes.get_html_themes_path()
-    ```
+Edit your Sphinx's `conf.py`
+----------------------------
 
-3. If you were previously using the git submodule method to use the Pylons
-theme, then comment or delete the block of code under the following
-statement.
+1.  Near the top, add the following.
 
-    ```python
-    # Add and use Pylons theme
-    if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
-    ...
-    ```
+    > ``` {.sourceCode .python}
+    > import pylons_sphinx_themes
+    > ```
 
-4. (Optional) Set a canonical root URL.
+2.  Activate the theme.
 
-    ```python
-    html_theme_options = dict(
-        canonical_url='http://the_root_domain/latest/docs/'
-    )
-    ```
+    > ``` {.sourceCode .python}
+    > html_theme = 'pyramid'
+    > html_theme_path = pylons_sphinx_themes.get_html_themes_path()
+    > ```
 
-   The URL points to the root of the documentation, and requires a trailing
-   slash.
+3.  If you were previously using the git submodule method to use the
+    Pylons theme, then comment or delete the block of code under the
+    following statement.
+
+    > ``` {.sourceCode .python}
+    > # Add and use Pylons theme
+    > if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
+    > ```
+
+4.  (Optional) Set a canonical root URL.
+
+    > ``` {.sourceCode .python}
+    > html_theme_options = dict(
+    >     canonical_url='http://the_root_domain/latest/docs/'
+    > )
+    > ```
+
+    The URL points to the root of the documentation, and requires a
+    trailing slash.
 
 Undo git submodule method
 -------------------------
-If you were previously using the git submodule method to use the Pylons theme,
-then perform the following additional steps.
 
-1. Remove ``.gitmodules``.
+If you were previously using the git submodule method to use the Pylons
+theme, then perform the following additional steps.
 
-    ```bash
-    cd <your_project_directory>
-    git rm .gitmodules
-    ```
+1.  Remove `.gitmodules`.
 
-2. Deinitialize the submodule.
+    > ``` {.sourceCode .bash}
+    > cd <your_project_directory>
+    > git rm .gitmodules
+    > ```
 
-    ```bash
-    cd docs/_themes
-    git submodule deinit .
-    ```
+2.  Deinitialize the submodule.
 
-3. Remove the submodule's directory.
+    > ``` {.sourceCode .bash}
+    > cd docs/_themes
+    > git submodule deinit .
+    > ```
 
-    ```bash
-    cd ..
-    git rm _themes/
-    ```
+3.  Remove the submodule's directory.
 
-4. Edit your Sphinx's ``Makefile``. The following is an
-   [example diff](https://github.com/Pylons/pyramid/pull/1636/files)
-   from Pyramid.
+    > ``` {.sourceCode .bash}
+    > cd ..
+    > git rm _themes/
+    > ```
 
-    ```
-    -html: themes
-    +html:
-    ...
-    -htmlhelp: themes
-    +htmlhelp:
-    ...
-    -themes:
-    -    cd ..; git submodule update --init --recursive; cd docs;
-    ```
+4.  Edit your Sphinx's `Makefile`. The following is an [example
+    diff](https://github.com/Pylons/pyramid/pull/1636/files) from
+    Pyramid.
 
-Update ``tox.ini``
-------------------
-If you use tox, you can specify dependencies for building your docs either in
-your ``setup.py`` (preferred) or in your ``tox.ini`` (duplicitous). See the
-[example from Pyramid](https://github.com/Pylons/pyramid/blob/master/setup.py#L58-L64).
+    > ``` {.sourceCode .diff}
+    > -html: themes
+    > +html:
+    > # ...
+    > -htmlhelp: themes
+    > +htmlhelp:
+    > #...
+    > -themes:
+    > -    cd ..; git submodule update --init --recursive; cd docs;
+    > ```
 
-```ini
+Update `tox.ini`
+----------------
+
+If you use tox, you can specify dependencies for building your docs
+either in your `setup.py` (preferred) or in your `tox.ini`
+(duplicitous). See the [example from
+Pyramid](https://github.com/Pylons/pyramid/blob/master/setup.py#L58-L64).
+
+``` {.sourceCode .ini}
 docs_extras = [
     'Sphinx >= 1.3.1',
     'docutils',
@@ -115,19 +119,19 @@ docs_extras = [
     'pylons-sphinx-themes',
     ]
 
-...
+# ...
 
-      extras_require = {
-          'testing':testing_extras,
-          'docs':docs_extras,
-          },
+extras_require = {
+    'testing':testing_extras,
+    'docs':docs_extras,
+    },
 ```
 
-Otherwise you can repeat yourself and edit your ``tox.ini``. The following
+Otherwise you can repeat yourself and edit your `tox.ini`. The following
 example is from
 [waitress](https://github.com/Pylons/waitress/blob/master/tox.ini#L28).
 
-```ini
+``` {.sourceCode .ini}
 deps =
     Sphinx
     repoze.sphinx.autointerface
@@ -136,24 +140,26 @@ deps =
 
 Update Read the Docs configuration
 ----------------------------------
-If you specify package requirements for Read the Docs, specify dependencies
-in your ``rtd.txt``. You can either name them explicitly, which might be
-duplicitous:
 
-```
+If you specify package requirements for Read the Docs, specify
+dependencies in your `rtd.txt`. You can either name them explicitly,
+which might be duplicitous:
+
+``` {.sourceCode .text}
 pylons-sphinx-themes
 ```
 
-or you can rely on your ``setup.py`` configuration, specifying dependencies in
-only one place, by simply using this in your ``rtd.txt``.
+or you can rely on your `setup.py` configuration, specifying
+dependencies in only one place, by simply using this in your `rtd.txt`.
 
-```
+``` {.sourceCode .text}
 -e .[docs]
 ```
 
 Available themes
 ----------------
 
-- **pylons** - the generic Pylons Project documentation theme
-- **pyramid** - the specific Pyramid documentation theme
-- **pylonsfw** - the specific Pylons Framework documentation theme
+-   **pylons** - the generic Pylons Project documentation theme
+-   **pyramid** - the specific Pyramid documentation theme
+-   **pylonsfw** - the specific Pylons Framework documentation theme
+
