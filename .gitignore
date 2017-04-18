@@ -6,8 +6,7 @@
 .coverage
 .DS_Store
 .idea
+build/
 dist/
-env26
-env24
-env27
-env35
+env2*
+env3*
