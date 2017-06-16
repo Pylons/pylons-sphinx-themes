@@ -1,7 +1,7 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0.2 (unreleased)
+1.0.2 (2017-06-16)
 ------------------
 
 - Remove HTTPS protocol to allow either HTTPS or HTTP.
