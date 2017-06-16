@@ -1,6 +1,12 @@
 Change log for pylons-sphinx-themes
 ===================================
 
+1.0.3 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 1.0.2 (2017-06-16)
 ------------------
 
