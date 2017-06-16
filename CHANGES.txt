@@ -4,10 +4,16 @@ Change log for pylons-sphinx-themes
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove HTTPS protocol to allow either HTTPS or HTTP.
 
 
 1.0.1 (2017-06-16)
+------------------
+
+- Use HTTPS for protocol of stylesheets.
+
+
+1.0 (2017-04-18)
 ------------------
 
 - Use zest.releaser for releasing.
