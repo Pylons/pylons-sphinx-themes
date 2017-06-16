@@ -1,0 +1,9 @@
+include *.md
+include *.txt
+recursive-include pylons_sphinx_themes *.conf
+recursive-include pylons_sphinx_themes *.css
+recursive-include pylons_sphinx_themes *.css_t
+recursive-include pylons_sphinx_themes *.gif
+recursive-include pylons_sphinx_themes *.html
+recursive-include pylons_sphinx_themes *.ico
+recursive-include pylons_sphinx_themes *.png
