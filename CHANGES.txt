@@ -1,7 +1,7 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0.4 (unreleased)
+1.0.4 (2017-06-20)
 ------------------
 
 - Specify line spacing for list items for only within the .body class.
