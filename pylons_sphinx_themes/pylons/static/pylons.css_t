@@ -382,6 +382,9 @@ span.methodcategory {
     line-height: 1;
     margin-bottom: 0.75em;
 }
+li {
+    margin: 1em 0;
+}
 /* Twitter Bootstrap 2 buttons */
 a.btn {
 text-decoration: none;
