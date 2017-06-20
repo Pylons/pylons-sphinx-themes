@@ -1,7 +1,7 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0.3 (unreleased)
+1.0.3 (2017-06-20)
 ------------------
 
 - Add line spacing for list items. Closes #4.
