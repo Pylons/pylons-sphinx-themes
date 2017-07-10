@@ -107,3 +107,4 @@ Contributors
 ------------
 
 - Steve Piercy, 2015/04/15
+- Zsolt Ero, 2017/07/11
