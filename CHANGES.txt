@@ -4,7 +4,8 @@ Change log for pylons-sphinx-themes
 1.0.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Clean up licensing
+  https://github.com/Pylons/pylons-sphinx-themes/issues/8
 
 
 1.0.4 (2017-06-20)
