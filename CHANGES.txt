@@ -1,7 +1,13 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0.6 (unreleased)
+1.0.7 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
+1.0.6 (2017-09-22)
 ------------------
 
 - Update zest.releaser in order to release to PyPI.
