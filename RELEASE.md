@@ -2,7 +2,11 @@
 
 [zest.releaser](https://zestreleaser.readthedocs.io/en/latest/) is used for releasing this package.
 
-To release, invoke the following command from your virtual environment.
+To release:
+
+1. Edit CHANGES.txt replacing "Nothing changed yet." with your changes, and commit. 
+
+2. Invoke the following command from your virtual environment.
 
 ```bash
 fullrelease
