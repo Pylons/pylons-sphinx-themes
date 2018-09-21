@@ -172,7 +172,7 @@ div.sphinxsidebar input {
 }
 
 div.sphinxsidebar input[type=text]{
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 /* -- sidebars -------------------------------------------------------------- */
@@ -190,6 +190,40 @@ div.sidebar {
 
 p.sidebar-title {
     font-weight: bold;
+}
+
+form.search {
+    height: 50px;
+}
+div.sphinxsidebar #searchbox input[type="submit"] {
+    width: 10%;
+}
+
+div.sphinxsidebar .ethical-text, div.sphinxsidebar .ethical-callout {
+    color: #444;
+    text-align: center;
+}
+
+div.sphinxsidebar .ethical-text {
+    padding: 5px 10px 0px;
+}
+
+div.sphinxsidebar .ethical-callout {
+    padding: 5px 10px 5px;
+}
+
+div.sphinxsidebar div.ethical-text a,
+div.sphinxsidebar div.ethical-callout a {
+    color: #222;
+    text-decoration: none;
+    border-bottom: 1px dotted #999;
+}
+
+div.sphinxsidebar div.ethical-text a:hover,
+div.sphinxsidebar div.ethical-callout a:hover {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
 }
 
 /* -- body styles ----------------------------------------------------------- */
