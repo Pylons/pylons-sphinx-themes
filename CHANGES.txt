@@ -1,7 +1,7 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0.7 (unreleased)
+1.0.7 (2018-09-21)
 ------------------
 
 - Added support for Ethical Ads for Read The Docs. See
