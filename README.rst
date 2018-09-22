@@ -8,77 +8,93 @@ To use a theme in your Sphinx documentation, follow this guide.
 
 Edit your project's ``setup.py``
 --------------------------------
-#. Add ``pylons-sphinx-themes`` to your project's requirements in its ``setup.py``. Here's an example from Pyramid.
+#.  Add ``pylons-sphinx-themes`` to your project's requirements in its ``setup.py``.
+    Here's an example from Pyramid.
 
-   .. code-block:: python
+    .. code-block:: python
 
-       docs_extras = [
-           'Sphinx >= 1.3.1', # Read The Docs minimum version
-           'docutils',
-           'repoze.sphinx.autointerface',
-           'pylons-sphinx-themes',
-           ]
+        docs_extras = [
+            'Sphinx >= 1.7.5', # Read The Docs minimum version
+            'docutils',
+            'repoze.sphinx.autointerface',
+            'pylons-sphinx-themes',
+        ]
 
 
 Edit your Sphinx's ``conf.py``
 ------------------------------
-#. Near the top, add the following.
+#.  Near the top, add the following.
 
-   .. code-block:: python
+    .. code-block:: python
 
-       import pylons_sphinx_themes
+        import pylons_sphinx_themes
 
-#. Activate the theme.
+#.  Activate the theme.
 
-   .. code-block:: python
+    .. code-block:: python
 
-       html_theme = 'pyramid'
-       html_theme_path = pylons_sphinx_themes.get_html_themes_path()
+        html_theme = 'pyramid'
+        html_theme_path = pylons_sphinx_themes.get_html_themes_path()
 
-#. If you were previously using the git submodule method to use the Pylons theme, then comment or delete the block of code under the following statement.
+#.  (Recommended) Enable `Ethical Ads <https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html>`_.
+    Doing so supports the `Python Software Foundation <https://www.python.org/psf-landing/>`_ with ad revenue.
 
-   .. code-block:: python
+    .. code-block:: python
 
-       # Add and use Pylons theme
-       if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
+        # Control display of sidebars
+        html_sidebars = { '**': [
+            'localtoc.html',
+            'ethicalads.html',
+            'relations.html',
+            'sourcelink.html',
+            'searchbox.html',
+        ] }
 
-#. (Optional) Set a canonical root URL. The URL points to the root of the documentation, and requires a trailing slash.
+#.  If you were previously using the git submodule method to use the Pylons theme, then comment or delete the block of code under the following statement.
 
-   .. code-block:: python
+    .. code-block:: python
 
-       html_theme_options = dict(
-           canonical_url='http://the_root_domain/latest/docs/'
-       )
+        # Add and use Pylons theme
+        if 'sphinx-build' in ' '.join(sys.argv):  # protect against dumb importers
+
+#.  (Optional) Set a canonical root URL.
+    The URL points to the root of the documentation, and requires a trailing slash.
+
+    .. code-block:: python
+
+        html_theme_options = dict(
+            canonical_url='http://the_root_domain/latest/docs/'
+        )
 
 
 Undo git submodule method
 -------------------------
 If you were previously using the git submodule method to use the Pylons theme, then perform the following additional steps.
 
-#. Remove ``.gitmodules``.
+#.  Remove ``.gitmodules``.
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-       cd <your_project_directory>
-       git rm .gitmodules
+        cd <your_project_directory>
+        git rm .gitmodules
 
-#. Deinitialize the submodule.
+#.  Deinitialize the submodule.
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-       cd docs/_themes
-       git submodule deinit .
+        cd docs/_themes
+        git submodule deinit .
 
-#. Remove the submodule's directory.
+#.  Remove the submodule's directory.
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-       cd ..
-       git rm _themes/
+        cd ..
+        git rm _themes/
 
-#. Edit your Sphinx's ``Makefile``. The following is an `example diff <https://github.com/Pylons/pyramid/pull/1636/files>`_ from Pyramid.
+#.  Edit your Sphinx's ``Makefile``. The following is an `example diff <https://github.com/Pylons/pyramid/pull/1636/files>`_ from Pyramid.
 
-   .. code-block:: diff
+    .. code-block:: diff
 
        -html: themes
        +html:
@@ -97,19 +113,19 @@ If you use tox, you can specify dependencies for building your docs either in yo
 .. code-block:: ini
 
     docs_extras = [
-        'Sphinx >= 1.3.1',
+        'Sphinx >= 1.7.5',
         'docutils',
         'repoze.sphinx.autointerface',
         'pylons_sphinx_latesturl',
         'pylons-sphinx-themes',
-        ]
+    ]
 
     # ...
 
     extras_require = {
         'testing':testing_extras,
         'docs':docs_extras,
-        },
+    },
 
 Otherwise you can repeat yourself and edit your ``tox.ini``. The following example is from `waitress <https://github.com/Pylons/waitress/blob/master/tox.ini#L28>`_.
 
