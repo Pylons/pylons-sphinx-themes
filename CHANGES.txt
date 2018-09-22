@@ -1,7 +1,7 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0.8 (unreleased)
+1.0.8 (2018-09-21)
 ------------------
 
 - Fix support for Ethical Ads.
