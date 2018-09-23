@@ -4,7 +4,8 @@ Change log for pylons-sphinx-themes
 1.0.9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove hyphenation because it sometimes hyphenates inappropriately, such as
+  in code.
 
 
 1.0.8 (2018-09-21)
