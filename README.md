@@ -42,7 +42,8 @@ Edit your Sphinx\'s `conf.py`
 
 3.  (Recommended) Enable [Ethical
     Ads](https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html).
-    Doing so supports the [Python Software
+    Doing so supports both [Read the Docs](https://readthedocs.org/) and
+    the [Python Software
     Foundation](https://www.python.org/psf-landing/) with ad revenue.
 
     ``` {.sourceCode .python}

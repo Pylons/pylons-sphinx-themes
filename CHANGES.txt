@@ -4,7 +4,7 @@ Change log for pylons-sphinx-themes
 1.0.10 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add Read the Docs to the recipients of ad revenue.
 
 
 1.0.9 (2018-09-23)

@@ -37,7 +37,7 @@ Edit your Sphinx's ``conf.py``
         html_theme_path = pylons_sphinx_themes.get_html_themes_path()
 
 #.  (Recommended) Enable `Ethical Ads <https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html>`_.
-    Doing so supports the `Python Software Foundation <https://www.python.org/psf-landing/>`_ with ad revenue.
+    Doing so supports both `Read the Docs <https://readthedocs.org/>`_ and the `Python Software Foundation <https://www.python.org/psf-landing/>`_ with ad revenue.
 
     .. code-block:: python
 
