@@ -54,6 +54,12 @@ setup(name='pylons-sphinx-themes',
       author='Steve Piercy',
       author_email='pylons-discuss@googlegroups.com',
       url='https://pylonsproject.org',
+      project_urls={
+          'Documentation':
+              'https://github.com/Pylons/pylons-sphinx-themes#pylons-sphinx-themes',
+          'Issue Tracker':
+              'https://github.com/Pylons/pylons-sphinx-themes/issues',
+      },
       license='BSD-derived (http://www.repoze.org/LICENSE.txt)',
       packages=find_packages(),
       include_package_data=True,
