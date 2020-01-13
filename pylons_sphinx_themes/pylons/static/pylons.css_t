@@ -384,6 +384,10 @@ table.highlighttable td {
 	padding: 0;
 }
 
+table.highlighttable td.linenos {
+	width: 2%;
+}
+
 a em.std-term, a span.std-term {
    color: #007f00;
 }
