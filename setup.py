@@ -16,7 +16,7 @@ import os
 
 from setuptools import setup, find_packages
 
-VERSION = '1.0.11.DEV0'
+VERSION = '1.0.12.DEV0'
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:
@@ -46,6 +46,7 @@ setup(name='pylons-sphinx-themes',
           'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6',
           'Programming Language :: Python :: 3.7',
+          'Programming Language :: Python :: 3.8',
           'Topic :: Documentation',
           'Topic :: Documentation :: Sphinx',
           'Topic :: Software Development :: Documentation',
