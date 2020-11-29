@@ -4,13 +4,15 @@
 
 To release:
 
-1. Edit CHANGES.txt replacing "Nothing changed yet." with your changes, and commit. 
+1.  Edit CHANGES.txt replacing "Nothing changed yet." with your changes, and commit.
 
-2. Invoke the following command from your virtual environment.
+2.  Invoke the following command from your virtual environment.
 
-```bash
-fullrelease
-```
+    ```bash
+    fullrelease
+    ```
+
+3.  Finally cut a new release from the new tag on [GitHub](https://github.com/Pylons/pylons-sphinx-themes/releases).
 
 
 ## Updating READMEs
