@@ -16,7 +16,7 @@ import os
 
 from setuptools import setup, find_packages
 
-VERSION = '1.0.12.DEV0'
+VERSION = '1.0.12'
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:

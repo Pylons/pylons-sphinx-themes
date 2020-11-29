@@ -1,7 +1,7 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0.12 (unreleased)
+1.0.12 (2020-11-28)
 -------------------
 
 - Added style ``.wy-table-responsive { overflow-x: scroll; }`` to prevent
