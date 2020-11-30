@@ -384,10 +384,6 @@ table.highlighttable td {
 	padding: 0;
 }
 
-table.highlighttable td.linenos {
-	width: 2%;
-}
-
 a em.std-term, a span.std-term {
    color: #007f00;
 }
@@ -537,4 +533,7 @@ div.body p, div.body dd, div.body li, div.body blockquote {
 }
 .wy-table-responsive {
     overflow-x: scroll;
+}
+.linenodiv {
+    padding-top: 2px;
 }
