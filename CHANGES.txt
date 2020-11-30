@@ -1,7 +1,7 @@
 Change log for pylons-sphinx-themes
 ===================================
 
-1.0.13 (unreleased)
+1.0.13 (2020-11-30)
 -------------------
 
 - Revert fix of linenos in tables. Sphinx fixed this issue in v3.0. RTD rolled
