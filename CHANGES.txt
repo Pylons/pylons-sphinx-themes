@@ -4,7 +4,11 @@ Change log for pylons-sphinx-themes
 1.0.13 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Revert fix of linenos in tables. Sphinx fixed this issue in v3.0. RTD rolled
+  it out as a feature flag in April 2020, and it now appears to be rolling out
+  in more projects.
+- Add padding to the top of `linenodiv` to align with code in tables and its
+  extra 2px top border.
 
 
 1.0.12 (2020-11-28)
